@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Motion } from '@capacitor/motion';
+import { PluginListenerHandle } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root'

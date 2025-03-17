@@ -11,12 +11,12 @@ export class AppComponent implements OnInit {
   constructor(private motionS: MotionService) {}
 
   title = 'angular-motion';
-  acelerometer: any = null;
+  acelerometer:{ x: number; y: number; z: number } | null = null;
 
   ngOnInit(): void {
     this.motionS.startShakeDetection((e: any) => {
       this.acelerometer = e;  
-      // console.log(e);
+      console.log(this.acelerometer);
     });
   }
 }
