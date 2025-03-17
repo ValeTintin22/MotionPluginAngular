@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.motionS.startShakeDetection((e: any) => {
-      this.acelerometer = e;
+      this.acelerometer = e;  
+      // console.log(e);
     });
   }
 }
