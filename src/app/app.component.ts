@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MotionService } from './Services/motion.service';
 
 @Component({
@@ -6,15 +6,16 @@ import { MotionService } from './Services/motion.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   
-  motionS = Inject(MotionService);
+  constructor(private motionS: MotionService) {}
 
   title = 'angular-motion';
-  acelerometer = null
+  acelerometer: any = null;
+
   ngOnInit(): void {
-    this.acelerometer = this.motionS.startShakeDetection((e:any)=>{
-      return e;
+    this.motionS.startShakeDetection((e: any) => {
+      this.acelerometer = e;
     });
   }
 }
