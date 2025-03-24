@@ -1,59 +1,91 @@
-# AngularMotion
+# Proyecto Sensores de Movimiento Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+Este proyecto proporciona un componente y servicio reutilizable para acceder a los datos del acelerómetro y giroscopio del dispositivo en aplicaciones móviles. Es un recurso educativo diseñado para clases de programación móvil, permitiendo a los estudiantes implementar funcionalidades basadas en el movimiento y rotación del dispositivo.
 
-## Development server
+## Descripción
 
-To start a local development server, run:
+El proyecto incluye:
+- Un componente Angular que muestra los datos del acelerómetro (x, y, z) y giroscopio (alpha, beta, gamma)
+- Un servicio que maneja la comunicación con los sensores del dispositivo
+- Implementación usando Capacitor para acceso nativo al hardware
+- Interfaz organizada para visualizar datos de ambos sensores en tiempo real
 
+## Instalación
+
+### Requisitos Previos
+- Node.js y npm instalados
+- Angular CLI
+- Android Studio (para Android)
+- Xcode (para iOS)
+
+### Pasos de Instalación
+
+1. Clonar el repositorio:
 ```bash
-ng serve
+git clone [url-del-repositorio]
+cd ProyectAcelerometer
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Instalar dependencias:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Configuración para Android
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
+1. Construir el proyecto:
 ```bash
 ng build
+npx cap add android
+npx cap sync
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+2. Abrir en Android Studio:
 ```bash
-ng test
+npx cap open android
 ```
 
-## Running end-to-end tests
+3. Ejecutar la aplicación desde Android Studio
 
-For end-to-end (e2e) testing, run:
+### Configuración para iOS
 
+1. Construir el proyecto:
 ```bash
-ng e2e
+ng build
+npx cap add ios
+npx cap sync
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+2. Abrir en Xcode:
+```bash
+npx cap open ios
+```
 
-## Additional Resources
+3. Ejecutar la aplicación desde Xcode
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Implementación del Componente y Servicio
+
+1. Copiar el servicio del acelerómetro de `src/app/Services/` a tu proyecto
+2. Copiar el componente de `src/app/app.component.*` a tu proyecto
+3. Importar y configurar en tu módulo/componente principal
+
+## Ideas de Aplicaciones
+
+### 1. Contador de Pasos Simple
+Una aplicación básica que utiliza el acelerómetro para contar pasos. Ideal para aprender a procesar datos del acelerómetro y establecer umbrales de detección de movimiento. Perfecto como primer proyecto para entender el funcionamiento de los sensores.
+
+### 2. Rotador de Imágenes
+Una aplicación que rota una imagen según la orientación del dispositivo usando el giroscopio. Excelente para aprender sobre los eventos de orientación y transformaciones básicas de elementos en pantalla.
+
+
+### 3. Medidor de Ángulos
+Una aplicación básica que muestra el ángulo de inclinación del dispositivo. Usa el acelerómetro para calcular ángulos simples. Ideal para practicar operaciones matemáticas básicas con datos de sensores.
+
+
+## Contribución
+
+Este proyecto está diseñado como recurso educativo. Se anima a los estudiantes a experimentar, modificar y mejorar el código base para sus propios proyectos.
+
+## Licencia
+
+Este proyecto está disponible como recurso educativo de libre uso.
