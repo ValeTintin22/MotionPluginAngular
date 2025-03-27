@@ -1,19 +1,29 @@
 <div class="sensor-container">
+  <!-- Contador de Pasos -->
   <div class="sensor-section">
-    <h2>Acelerómetro</h2>
-    <div class="sensor-data">
-      <p>X: {{motionData.acceleration?.x ?? 'No data'}}</p>
-      <p>Y: {{motionData.acceleration?.y ?? 'No data'}}</p>
-      <p>Z: {{motionData.acceleration?.z ?? 'No data'}}</p>
+    <h2>Contador de Pasos</h2>
+    <div class="sensor-card">
+      <div class="icon">🚶‍♂️</div>
+      <p>Pasos: {{ pasos }}</p>
+      <p>Aceleración: {{ motionData.acceleration?.y?.toFixed(2) ?? 'No data' }} m/s²</p>
     </div>
   </div>
 
+  <!-- Rotador de Imágenes -->
   <div class="sensor-section">
-    <h2>Giroscopio</h2>
-    <div class="sensor-data">
-      <p>Alpha: {{motionData.rotation?.alpha ?? 'No data'}}°</p>
-      <p>Beta: {{motionData.rotation?.beta ?? 'No data'}}°</p>
-      <p>Gamma: {{motionData.rotation?.gamma ?? 'No data'}}°</p>
+    <h2>Rotador de Imágenes</h2>
+    <div class="sensor-card">
+      <div class="icon">🔄</div>
+      <p>Rotación: {{ motionData.rotation?.gamma?.toFixed(1) ?? 'No data' }}°</p>
+    </div>
+  </div>
+
+  <!-- Medidor de Ángulos -->
+  <div class="sensor-section">
+    <h2>Medidor de Ángulos</h2>
+    <div class="sensor-card">
+      <div class="icon">↻</div>
+      <p>Ángulo: {{ motionData.rotation?.beta?.toFixed(1) ?? 'No data' }}°</p>
     </div>
   </div>
 </div>
